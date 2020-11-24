@@ -19,7 +19,7 @@ And build w/ singularity:
 sudo singularity build --notest def/yade.sif def/yade_container.def
 ```
 
-This process will generate the image of the container with the name of yade.sif.
+This process will generate the image of the container with the name of **yade.sif**.
 
 ---
 #### Running...
