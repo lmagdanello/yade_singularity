@@ -1,6 +1,6 @@
 # yade_singularity
 
-This project is a .def with the purpose of generating the image of a Singularity container with Ubuntu and Yade (https://yade-dem.org).
+This is a Singularity container project with the purpose of generating the image of a Singularity container with Ubuntu:18.04 and Yade:latest.
 
 ---
 #### Building...
@@ -136,6 +136,13 @@ $ singularity run-help def/yade.sif
         This is a container that uses Ubuntu to prepare the environment for installing Yade (https://yade-dem.org/), which is an extensible open-source framework for discrete numerical models, focused on Discrete Element Method.
 ```
 
+Dir structure:
+```shell
+
+
+```
+
+
 ```shell
 $ singularity inspect def/yade.sif
 Author: leonardo.araujo@atos.net
@@ -192,13 +199,4 @@ Running script sqrt.py
 
 ---
 
-Author: leonardo.araujo@atos.net
-Brazil, Sao Paulo
-
-
-
-
-
-
-
-
+leonardo.araujo@atos.net ;)
