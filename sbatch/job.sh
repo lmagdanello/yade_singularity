@@ -1,13 +1,11 @@
 #!/bin/bash
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=2
-#SBATCH --ntasks=8
-#SBATCH -p cpu_dev
-#SBATCH -J yade
-#SBATCH --exclusive
-#SBATCH --output=yade-%j.out
+#SBATCH --nodes=<Total of Nodes>
+#SBATCH --ntasks-per-node=<Number of Tasks/Node>
+#SBATCH --ntasks=<Total Tasks>
+#SBATCH -p <Partition>
+#SBATCH -J <Job Name>
 
 echo $SLURM_JOB_NODELIST
 nodeset -e $SLURM_JOB_NODELIST
-
-singularity run /scratch/app/yade/yade.sif -x sqrt.py
+echo
+singularity run def/yade.sif -x sqrt.py
