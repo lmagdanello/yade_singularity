@@ -3,6 +3,21 @@
 This is a Singularity container project with the purpose of generating the image of a Singularity container with Ubuntu:18.04 and Yade:latest.
 
 ---
+
+#### Dir structure:
+
+```shell
+.
+|-- README.md
+|-- def
+|   |-- yade_2018.02b.def  	<- Ubuntu 18.04 + Yade 2018
+|   `-- yade_2020.01a-12.def	<- Ubuntu 20.04 + Yade 2020
+`-- sbatch
+    `-- job.sh			<- Sbatch Sample
+
+2 directories, 4 files
+```
+
 #### Building...
 
 Clone this repository:
@@ -16,10 +31,12 @@ cd yade_singularity
 ```
 And build w/ singularity:
 ```shell
-sudo singularity build --notest def/yade.sif def/yade_container.def
+sudo singularity build --notest def/yade.sif def/yade_<version>.def
 ```
 
 This process will generate the image of the container with the name of **yade.sif**.
+
+The examples below were made using def 2018.02b with Ubuntu 18.04 and Yade 2018, but the same is true for version 2020 with Ubuntu 20.04.
 
 ---
 #### Running...
@@ -136,15 +153,8 @@ $ singularity run-help def/yade.sif
         This is a container that uses Ubuntu to prepare the environment for installing Yade (https://yade-dem.org/), which is an extensible open-source framework for discrete numerical models, focused on Discrete Element Method.
 ```
 
-Dir structure:
 ```shell
-
-
-```
-
-
-```shell
-$ singularity inspect def/yade.sif
+$ singularity inspect def/yade_2018.02b.sif
 Author: leonardo.araujo@atos.net
 Version: v0.0.2
 org.label-schema.build-date: Tuesday_24_November_2020_15:4:2_-03
@@ -152,6 +162,18 @@ org.label-schema.schema-version: 1.0
 org.label-schema.usage: /.singularity.d/runscript.help
 org.label-schema.usage.singularity.deffile.bootstrap: docker
 org.label-schema.usage.singularity.deffile.from: ubuntu:18.04
+org.label-schema.usage.singularity.runscript.help: /.singularity.d/runscript.help
+org.label-schema.usage.singularity.version: 3.5.2-1.1.el7
+
+
+$ singularity inspect def/yade_2020.01a-12.sif
+Author: leonardo.araujo@atos.net
+Version: v0.0.2
+org.label-schema.build-date: Tuesday_24_November_2020_17:13:34_-03
+org.label-schema.schema-version: 1.0
+org.label-schema.usage: /.singularity.d/runscript.help
+org.label-schema.usage.singularity.deffile.bootstrap: docker
+org.label-schema.usage.singularity.deffile.from: ubuntu:20.04
 org.label-schema.usage.singularity.runscript.help: /.singularity.d/runscript.help
 org.label-schema.usage.singularity.version: 3.5.2-1.1.el7
 ```
