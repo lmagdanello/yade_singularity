@@ -68,7 +68,7 @@ DISTRIB_DESCRIPTION="Ubuntu 18.04.5 LTS"
 Singularity>
 ```
 
-You can also pass arguments to the container, like other scripts. For example, given a python script that calculates the square root of *144*, we will execute it with yade:
+You can also pass arguments to the container, like other scripts. For example, given a python script that calculates the square root of *144*. Let's run it with yade:
 Note: *-x* is to suppress Yade's iterative terminal;
 ```python
 # sqrt.py
