@@ -1,6 +1,4 @@
-# yade_singularity
-
-This is a Singularity container project with the purpose of generating the image of a Singularity container with Ubuntu:18.04 and Yade:latest.
+# Container Singularity Ubuntu with Yade.
 
 ---
 
